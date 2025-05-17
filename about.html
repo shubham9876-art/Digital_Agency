@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - NamasteTanaBana</title>
+    <meta name="description" content="Learn about NamasteTanaBana’s journey, team, and desi-fusion vision.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f1e9;
+            color: #2d2d2d;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .cursor {
+            width: 15px;
+            height: 15px;
+            background-color: #d4a017;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+        .cursor-trail {
+            width: 10px;
+            height: 10px;
+            background-color: #8b2e3c;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.5;
+        }
+        .team-card:hover .team-bio {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #d4a017;
+            z-index: 1000;
+            transform-origin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="trail"></div>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-[#f8f1e9]/95 backdrop-blur-md shadow-lg z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-[#8b2e3c] animate-pulse">NamasteTanaBana</a>
+            <div class="space-x-8">
+                <a href="index.html" class="text-[#2d2d2d] hover:text-[#d4a017] font-semibold">Home</a>
+                <a href="services.html" class="text-[#2d2d2d] hover:text-[#d4a017] font-semibold">Services</a>
+                <a href="works.html" class="text-[#2d2d2d] hover:text-[#d4a017] font-semibold">Works</a>
+                <a href="about.html" class="text-[#2d2d2d] hover:text-[#d4a017] font-semibold">About</a>
+                <a href="contact.html" class="text-[#2d2d2d] hover:text-[#d4a017] font-semibold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="py-20 container mx-auto px-4 mt-20">
+        <h2 class="text-5xl font-bold text-center mb-16 animate-text">From a Flat Room to a Full House</h2>
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <p class="text-lg animate-text delay-200">Born in a tiny flat with big dreams, NamasteTanaBana is a desi-fusion creative force. From late-night sketches to global impact, our spark is blending tradition with innovation. We’re not just a team—we’re a vibe.</p>
+        </div>
+
+        <!-- Team -->
+        <h3 class="text-4xl font-bold text-center mb-12 animate-text">Meet Our Tribe</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="team-card relative rounded-xl overflow-hidden tilt">
+                <img src="https://via.placeholder.com/400x400?text=Team+1" alt="Team Member 1" class="w-full h-80 object-cover">
+                <div class="team-bio absolute inset-0 bg-[#8b2e3c]/95 p-6 opacity-0 transform translateY(20px) transition-all duration-500">
+                    <h4 class="text-xl font-bold text-[#f8f1e9]">Aisha</h4>
+                    <p class="text-[#f8f1e9]">Creative Director. Loves chai and bold designs.</p>
+                </div>
+            </div>
+            <div class="team-card relative rounded-xl overflow-hidden tilt">
+                <img src="https://via.placeholder.com/400x400?text=Team+2" alt="Team Member 2" class="w-full h-80 object-cover">
+                <div class="team-bio absolute inset-0 bg-[#8b2e3c]/95 p-6 opacity-0 transform translateY(20px) transition-all duration-500">
+                    <h4 class="text-xl font-bold text-[#f8f1e9]">Rahul</h4>
+                    <p class="text-[#f8f1e9]">Tech Wizard. Codes with a side of samosas.</p>
+                </div>
+            </div>
+            <div class="team-card relative rounded-xl overflow-hidden tilt">
+                <img src="https://via.placeholder.com/400x400?text=Team+3" alt="Team Member 3" class="w-full h-80 object-cover">
+                <div class="team-bio absolute inset-0 bg-[#8b2e3c]/95 p-6 opacity-0 transform translateY(20px) transition-all duration-500">
+                    <h4 class="text-xl font-bold text-[#f8f1e9]">Priya</h4>
+                    <p class="text-[#f8f1e9]">Visual Storyteller. Captures life’s colors.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <h3 class="text-4xl font-bold text-center mb-12 animate-text">Our Journey</h3>
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center mb-12 animate-timeline">
+                <svg class="w-12 h-12 mr-4 text-[#d4a017]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <div>
+                    <h4 class="text-2xl font-bold">2023: The Spark</h4>
+                    <p>Started in a flat with big dreams and endless coffee.</p>
+                </div>
+            </div>
+            <div class="flex items-center mb-12 animate-timeline">
+                <svg class="w-12 h-12 mr-4 text-[#d4a017]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <div>
+                    <h4 class="text-2xl font-bold">2024: First Big Win</h4>
+                    <p>Landed a major client and grew our tribe.</p>
+                </div>
+            </div>
+            <div class="flex items-center animate-timeline">
+                <svg class="w-12 h-12 mr-4 text-[#d4a017]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <div>
+                    <h4 class="text-2xl font-bold">2025: Global Vibes</h4>
+                    <p>Taking desi creativity to the world stage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="py-16 bg-[#355e3b] text-[#f8f1e9] text-center">
+        <h2 class="text-4xl font-bold mb-6 animate-text">Our Insta Vibes</h2>
+        <div class="grid grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <img src="https://via.placeholder.com/200x200?text=Insta+1" alt="Instagram Post 1" class="w-full h-48 object-cover rounded">
+            <img src="https://via.placeholder.com/200x200?text=Insta+2" alt="Instagram Post 2" class="w-full h-48 object-cover rounded">
+            <img src="https://via.placeholder.com/200x200?text=Insta+3" alt="Instagram Post 3" class="w-full h-48 object-cover rounded">
+        </div>
+        <a href="https://www.instagram.com/namastetanabana" target="_blank" class="inline-block mt-6 bg-[#d4a017] text-[#2d2d2d] px-6 py-3 rounded-full font-semibold hover:bg-[#f8f1e9] transition">Follow Us</a>
+    </section>
+
+    <!-- Sticky CTA -->
+    <a href="contact.html" class="sticky-cta fixed bottom-8 right-8 bg-[#d4a017] text-[#2d2d2d] px-6 py-3 rounded-full font-semibold shadow-lg z-50">Let’s Create</a>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-[#2d2d2d] text-[#f8f1e9] text-center">
+        <p>© 2025 NamasteTanaBana. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-4">
+            <a href="https://www.instagram.com/namastetanabana" target="_blank" class="hover:text-[#d4a017]">Instagram</a>
+            <a href="#" target="_blank" class="hover:text-[#d4a017]">LinkedIn</a>
+            <a href="#" target="_blank" class="hover:text-[#d4a017]">Twitter</a>
+        </div>
+    </footer>
+
+    <script>
+        // Cursor Animation
+        const cursor = document.getElementById('cursor');
+        const trail = document.getElementById('trail');
+        let trailX = 0, trailY = 0;
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            trailX += (e.clientX - trailX) * 0.2;
+            trailY += (e.clientY - trailY) * 0.2;
+            trail.style.left = trailX + 'px';
+            trail.style.top = trailY + 'px';
+        });
+
+        // Scroll Progress
+        gsap.to('#scrollProgress', {
+            scaleX: () => window.scrollY / (document.body.scrollHeight - window.innerHeight),
+            scrollTrigger: {
+                trigger: document.body,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: true
+            }
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.animate-text', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+        gsap.from('.animate-timeline', {
+            opacity: 0,
+            x: -50,
+            duration: 1,
+            stagger: 0.3,
+            scrollTrigger: {
+                trigger: '.animate-timeline',
+                start: 'top 80%'
+            }
+        });
+        gsap.from('.tilt', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: '.tilt',
+                start: 'top 80%'
+            }
+        });
+
+        // 3D Tilt Effect
+        document.querySelectorAll('.tilt').forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                gsap.to(el, { rotationY: x * 10, rotationX: -y * 10, duration: 0.3, ease: 'power2.out' });
+            });
+            el.addEventListener('mouseleave', () => {
+                gsap.to(el, { rotationY: 0, rotationX: 0, duration: 0.5, ease: 'power2.out' });
+            });
+        });
+    </script>
+</body>
+</html>

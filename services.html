@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - NamasteTanaBana</title>
+    <meta name="description" content="Explore NamasteTanaBana's creative services: UI/UX, Web & App Development, Graphic Design, Social Media, Photography, Videography, and Editing.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f1e9;
+            color: #2d2d2d;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .cursor {
+            width: 15px;
+            height: 15px;
+            background-color: #d4a017;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+        .cursor-trail {
+            width: 10px;
+            height: 10px;
+            background-color: #8b2e3c;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.5;
+        }
+        .service-card:hover .service-details {
+            opacity: 1;
+            transform: translateY(0) rotateX(0deg);
+        }
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #d4a017;
+            z-index: 1000;
+            transform-origin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="trail"></div>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-[#f8f1e9]/95 backdrop-blur-md shadow-lg z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-[#8b2e3c] animate-pulse">NamasteTanaBana</a>
+            <div class="space-x-8">
+                <a href="index.html" class="text-[#2d2d2d] hover:text-[#d4a017] font-semibold">Home</a>
+                <a href="services.html" class="text-[#2d2d2d] hover:text-[#d4a017] font-semibold">Services</a>
+                <a href="works.html" class="text-[#2d2d2d] hover:text-[#d4a017] font-semibold">Works</a>
+                <a href="about.html" class="text-[#2d2d2d] hover:text-[#d4a017] font-semibold">About</a>
+                <a href="contact.html" class="text-[#2d2d2d] hover:text-[#d4a017] font-semibold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section class="py-20 container mx-auto px-4 mt-20">
+        <h2 class="text-5xl font-bold text-center mb-16 animate-text">Our Creative Arsenal</h2>
+        <div class="flex overflow-x-auto md:grid md:grid-cols-3 gap-8 snap-x md:snap-none pb-4">
+            <!-- UI/UX Design -->
+            <div class="service-card relative bg-[#355e3b] text-[#f8f1e9] p-8 rounded-xl snap-center min-w-[280px] md:min-w-0 tilt">
+                <svg class="w-16 h-16 mb-4" fill="none" stroke="#d4a017" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h3 class="text-2xl font-bold mb-4">UI/UX Design</h3>
+                <div class="service-details absolute inset-0 bg-[#8b2e3c]/95 p-8 opacity-0 transform translateY(20px) rotateX(15deg) transition-all duration-500">
+                    <p>Crafting intuitive, user-centric interfaces with a desi twist.</p>
+                </div>
+            </div>
+            <!-- Web & App Dev -->
+            <div class="service-card relative bg-[#355e3b] text-[#f8f1e9] p-8 rounded-xl snap-center min-w-[280px] md:min-w-0 tilt">
+                <svg class="w-16 h-16 mb-4" fill="none" stroke="#d4a017" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                <h3 class="text-2xl font-bold mb-4">Web & App Dev</h3>
+                <div class="service-details absolute inset-0 bg-[#8b2e3c]/95 p-8 opacity-0 transform translateY(20px) rotateX(15deg) transition-all duration-500">
+                    <p>Building sleek, responsive websites and apps that shine.</p>
+                </div>
+            </div>
+            <!-- Graphic Design -->
+            <div class="service-card relative bg-[#355e3b] text-[#f8f1e9] p-8 rounded-xl snap-center min-w-[280px] md:min-w-0 tilt">
+                <svg class="w-16 h-16 mb-4" fill="none" stroke="#d4a017" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                <h3 class="text-2xl font-bold mb-4">Graphic Design</h3>
+                <div class="service-details absolute inset-0 bg-[#8b2e3c]/95 p-8 opacity-0 transform translateY(20px) rotateX(15deg) transition-all duration-500">
+                    <p>Designing vibrant visuals that tell your brand’s story.</p>
+                </div>
+            </div>
+            <!-- Social Media & Marketing -->
+            <div class="service-card relative bg-[#355e3b] text-[#f8f1e9] p-8 rounded-xl snap-center min-w-[280px] md:min-w-0 tilt">
+                <svg class="w-16 h-16 mb-4" fill="none" stroke="#d4a017" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                <h3 class="text-2xl font-bold mb-4">Social Media & Marketing</h3>
+                <div class="service-details absolute inset-0 bg-[#8b2e3c]/95 p-8 opacity-0 transform translateY(20px) rotateX(15deg) transition-all duration-500">
+                    <p>Boosting your online presence with bold strategies.</p>
+                </div>
+            </div>
+            <!-- Photography -->
+            <div class="service-card relative bg-[#355e3b] text-[#f8f1e9] p-8 rounded-xl snap-center min-w-[280px] md:min-w-0 tilt">
+                <svg class="w-16 h-16 mb-4" fill="none" stroke="#d4a017" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <h3 class="text-2xl font-bold mb-4">Photography</h3>
+                <div class="service-details absolute inset-0 bg-[#8b2e3c]/95 p-8 opacity-0 transform translateY(20px) rotateX(15deg) transition-all duration-500">
+                    <p>Capturing moments with a creative lens.</p>
+                </div>
+            </div>
+            <!-- Videography & Editing -->
+            <div class="service-card relative bg-[#355e3b] text-[#f8f1e9] p-8 rounded-xl snap-center min-w-[280px] md:min-w-0 tilt">
+                <svg class="w-16 h-16 mb-4" fill="none" stroke="#d4a017" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                <h3 class="text-2xl font-bold mb-4">Videography & Editing</h3>
+                <div class="service-details absolute inset-0 bg-[#8b2e3c]/95 p-8 opacity-0 transform translateY(20px) rotateX(15deg) transition-all duration-500">
+                    <p>Producing and editing stunning videos that resonate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-16 bg-[#8b2e3c] text-[#f8f1e9] text-center">
+        <h2 class="text-4xl font-bold mb-6 animate-text">Stay in the Loop</h2>
+        <p class="mb-6">Subscribe for creative tips and updates.</p>
+        <form class="max-w-md mx-auto flex">
+            <input type="email" placeholder="Your Email" class="w-full p-4 rounded-l-full text-[#2d2d2d] animate-input" aria-label="Email for newsletter">
+            <button type="submit" class="bg-[#d4a017] text-[#2d2d2d] p-4 rounded-r-full font-semibold hover:bg-[#f8f1e9] transition">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Sticky CTA -->
+    <a href="contact.html" class="sticky-cta fixed bottom-8 right-8 bg-[#d4a017] text-[#2d2d2d] px-6 py-3 rounded-full font-semibold shadow-lg z-50">Let’s Create</a>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-[#2d2d2d] text-[#f8f1e9] text-center">
+        <p>© 2025 NamasteTanaBana. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-4">
+            <a href="https://www.instagram.com/namastetanabana" target="_blank" class="hover:text-[#d4a017]">Instagram</a>
+            <a href="#" target="_blank" class="hover:text-[#d4a017]">LinkedIn</a>
+            <a href="#" target="_blank" class="hover:text-[#d4a017]">Twitter</a>
+        </div>
+    </footer>
+
+    <script>
+        // Cursor Animation
+        const cursor = document.getElementById('cursor');
+        const trail = document.getElementById('trail');
+        let trailX = 0, trailY = 0;
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            trailX += (e.clientX - trailX) * 0.2;
+            trailY += (e.clientY - trailY) * 0.2;
+            trail.style.left = trailX + 'px';
+            trail.style.top = trailY + 'px';
+        });
+
+        // Scroll Progress
+        gsap.to('#scrollProgress', {
+            scaleX: () => window.scrollY / (document.body.scrollHeight - window.innerHeight),
+            scrollTrigger: {
+                trigger: document.body,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: true
+            }
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.animate-text', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power3.out'
+        });
+        gsap.from('.service-card', {
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.service-card',
+                start: 'top 80%'
+            }
+        });
+
+        // 3D Tilt Effect
+        document.querySelectorAll('.tilt').forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                gsap.to(el, { rotationY: x * 10, rotationX: -y * 10, duration: 0.3, ease: 'power2.out' });
+            });
+            el.addEventListener('mouseleave', () => {
+                gsap.to(el, { rotationY: 0, rotationX: 0, duration: 0.5, ease: 'power2.out' });
+            });
+        });
+    </script>
+</body>
+</html>
